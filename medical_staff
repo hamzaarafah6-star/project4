@@ -1,0 +1,71 @@
+package club;
+
+import java.util.Arrays;
+
+public class medical_staff extends employee {
+private boolean MedKitReady,check;
+private int numofinjuredplayers;
+//boolean medk ,int nofinj,
+String[][]med=new String [6][7];
+static int currentRow=0;
+    public medical_staff (){}
+public medical_staff(String sec, int w, String s,boolean c,String name,String nat,int sa,int ag){
+super(sec,w,s,c,name,nat,sa,ag);
+//MedKitReady=medk;
+//numofinjuredplayers=nofinj;
+}
+
+
+public void setmedkitReady( boolean medk ){
+MedKitReady=medk;} 
+public boolean getmedkitReady(){
+return MedKitReady;} 
+public void setnumofinjuredplayers(int nofinj){numofinjuredplayers = nofinj;}        
+public int getnumofinjuredplayers(){return numofinjuredplayers;}
+public String kitsreadyornot(){
+if(MedKitReady){return "Ready";}
+else{return "n't Ready";}
+//if(MedKitReady)=if(MedKitReady==true)
+}
+
+
+public  void fillarray(){
+med[0][0]="Name";
+med[0][1]="Age";
+med[0][2]="Nationality";
+med[0][3]="Salary";
+med[0][4]="Club Section";
+med[0][5]="Shift";
+med[0][6]="Work Hours";
+
+ med[currentRow][0] = name;
+    med[currentRow][1] = "" + age;
+    med[currentRow][2] = nationality;
+    med[currentRow][3] = "" + salary;
+    med[currentRow][4] = ClubSection;
+    med[currentRow][5] = Shift;
+    med[currentRow][6] = "" + Workhours;
+
+    currentRow++; 
+}
+
+
+
+
+@Override
+public void print_info(){
+fillarray(); 
+System.out.println("Medical Staffs' Schedule: ");
+for (int i = 0; i < med.length; i++) {
+if (med[i][0] != null) { 
+for (int j = 0; j < med[i].length; j++) {
+System.out.print(med[i][j] + "\t"); }
+System.out.println(); }
+ }
+System.out.println("Number of injured players is  "+numofinjuredplayers );
+System.out.println("Medical kit is"+kitsreadyornot());
+System.out.println("The shift is "+Shift);
+System.out.println("Doctor "+checking(check));
+}
+}
+

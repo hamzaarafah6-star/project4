@@ -1,0 +1,66 @@
+package club;
+public abstract class Person {
+
+    protected  String name;
+    protected int age;
+    protected int salary;
+    protected String nationality;
+
+    public Person() {
+    }
+
+//    public Person(int age, int salary) {
+//        this.age = age;
+//        this.salary = salary;
+//    }
+
+    public Person(String name, String nationality, int salary, int age) {
+        this.name = name;
+        this.nationality = nationality;
+        this.salary = salary;
+        this.age = age;
+    }
+
+    public void set_name(String name) {
+        this.name = name;
+    }
+
+    public String get_name() {
+        return name;
+    }
+
+    public void set_nationality(String nationality) {
+        this.nationality = nationality;
+    }
+
+    public String get_nationality() {
+        return nationality;
+    }
+
+    public void set_salary(int salary) {
+        this.salary = salary;
+    }
+
+    public int get_salary() {
+        return salary;
+    }
+
+    public void set_age(int age) {
+        if (age > 0) {
+            this.age = age;
+        } else {
+            System.out.println("Sorry, invalid age");
+        }
+    }
+
+    public int get_age() {
+        return age;
+    }
+
+    public abstract void print_info();
+
+    
+//    public String toString() {
+//        return "Salary: " + salary +", Name: " + name +", Age: " + age +", Nationality: " + nationality;
+//    }
+}

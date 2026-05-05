@@ -1,0 +1,63 @@
+package club;
+public abstract class employee extends Person {
+protected String ClubSection ,Shift;
+protected int Workhours;
+protected boolean check;
+
+public employee(){
+//super();
+ClubSection="None";
+Workhours=0;
+check=false;
+Shift="None";}
+public employee(String sec, int w , String s,boolean c,String name,String nat,int sa,int ag){
+ super(name,nat,sa,ag);
+check=c;
+Shift=s;
+ClubSection=sec;
+Workhours=w;
+if(sec.equalsIgnoreCase("Medical staff")){
+ClubSection="Medical staff";}
+else if(sec.equalsIgnoreCase("Cleaners")){
+ClubSection="cleaners";}
+else if(sec.equalsIgnoreCase("Administration members")){
+ClubSection="Administration members";}
+else{
+ClubSection="None";
+System.out.println("Invalid input "); }
+if(w<0){
+System.out.println("Invalid number of hours");}
+else{Workhours=w; }
+ }
+public void setClubsection(String sec ){
+ClubSection=sec;
+if(sec.equalsIgnoreCase("Medical staff")){
+ClubSection="Medical staff";}
+else if(sec.equalsIgnoreCase("Cleaners")){
+ClubSection="cleaners";}
+else if(sec.equalsIgnoreCase("Administration")){
+ClubSection="Administration";}
+else{
+ClubSection="None";
+System.out.println("Invalid input ");}
+}
+public String getClubsection(){
+return(ClubSection) ; }
+public void setworkhours(int w){  
+Workhours=w;
+if(w<0){
+System.out.println("Invalid number of hours");
+Workhours=0;}
+else{Workhours=w; }
+}
+public double getworkhours(){return Workhours;}
+public void setCheck(boolean c){check=c;}
+public boolean getcheck (){return check;}
+public void setshifttype (String s){Shift=s;}
+public String getshifttype(){return Shift;}
+public String checking(boolean check){
+if(check){
+return "have checked in ";}
+else{return"haven't checked in";}
+}  
+}
